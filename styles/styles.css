@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #535353;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    margin-top: 30px;
+    min-width: 375px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 28px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-wrap: balance;
+    text-align: center;
+}
+
+.main {
+    max-width: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.products-section,
+.buy-section {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.subtitle {
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-wrap: balance;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.product__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.product_wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product__name {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.product__price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.counter input {
+    width: 40.8px;
+    height: 40.8px;
+    text-align: center;
+    border-radius: 0.5rem;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.button {
+    color: white;
+    background-color: #222222;
+    border-radius: 0.5rem;
+    padding: 10px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+}
+
+.button:hover {
+    background-color: #333;
+}
+
+.button svg {
+    display: inline;
+    width: 1.3rem;
+    height: 1.3rem;
+    color: white;
+}
+
+.button:focus svg {
+    animation: spin_357 0.5s linear;
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.cartBtn {
+    width: 155px;
+    height: 50px;
+    border: none;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    background-color: rgb(12, 122, 185);
+    box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.cart {
+    z-index: 2;
+}
+
+.cartBtn:active {
+    transform: scale(0.96);
+}
+
+.product {
+    position: absolute;
+    width: 12px;
+    border-radius: 3px;
+    content: "";
+    left: 23px;
+    bottom: 23px;
+    opacity: 0;
+    z-index: 1;
+    fill: rgb(211, 211, 211);
+}
+
+.cartBtn:hover .product {
+    animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) rotate(-90deg);
+        opacity: 1;
+    }
+}
+
+.cartBtn:hover .cart {
+    animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+#purchased-items {
+    margin-top: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#checkoutBtn {
+    margin: 20px 0;
+}
+
+/* From Uiverse.io by sihamjardi */
+.deleteButton {
+    position: relative;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #cc0000;
+    background-color: #e50000;
+    overflow: hidden;
+}
+
+.deleteButton,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.deleteButton .button__text {
+    transform: translateX(35px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.deleteButton .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #cc0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteButton .svg {
+    width: 20px;
+}
+
+.deleteButton:hover {
+    background: #cc0000;
+}
+
+.deleteButton:hover .button__text {
+    color: transparent;
+}
+
+.deleteButton:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.deleteButton:active .button__icon {
+    background-color: #b20000;
+}
+
+.deleteButton:active {
+    border: 1px solid #b20000;
+}
+
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.purchased-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+@media (min-width: 900px) {
+
+    .main {
+        max-width: 1200px;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 50px;
+    }
+}
+
+.wrapper[data-right="true"] {
+    justify-content: flex-end;
+}
